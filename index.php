@@ -10,23 +10,10 @@ leggete le slide sulla session e la documentazione
 Milestone 4 (BONUS)
 Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, lettere e simboli. Possono essere scelti singolarmente (es. solo numeri) oppure possono essere combinati fra loro (es. numeri e simboli, oppure tutti e tre insieme). Dare all’utente anche la possibilità di permettere o meno la ripetizione di caratteri uguali. -->
 
+
+
 <?php
-$password_length = $_GET['password_length'];
-//var_dump($password_length);
-
-function generatePsw(int $length)
-{
-
-    $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"$%&/()?^*#-_'; /* characters length 76 */
-
-    $generate_password = '';
-    for ($i = 0; $i < $length; $i++) {
-        $generate_password .= substr($characters, rand(0, (strlen($characters))), 1);
-    };
-
-    return $generate_password;
-}
-
+include './functions.php'
 ?>
 
 <!DOCTYPE html>
@@ -41,10 +28,7 @@ function generatePsw(int $length)
 </head>
 
 <body class="bg-dark text-white">
-    <header>
-    </header>
-
-
+    
     <main>
         <div class="container my-5">
             <div class="row my-3 d-flex justify-content-center align-items-center">
@@ -72,17 +56,9 @@ function generatePsw(int $length)
                 </div>
             </div>
 
-
-
-
-
         </div>
     </main>
 
-
-    <footer>
-
-    </footer>
 
 
     <!-- Bootstrap JavaScript Libraries -->
